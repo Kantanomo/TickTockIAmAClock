@@ -21,6 +21,7 @@ namespace TickTockIAmAClock
                 {
                     try
                     {
+                        //This is done because if it isn't swapped around during loading screens input gets all fucked.
                         switch (GetGameState)
                         {
                             case 0: //Main Menu
