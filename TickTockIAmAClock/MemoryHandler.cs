@@ -40,6 +40,8 @@ namespace TickTockIAmAClock
         public static extern bool CloseHandle(int hObject);
         [DllImport("kernel32.dll")]
         public static extern bool VirtualProtectEx(int hProcess, int lpAddress, int dwSize, uint flNewProtect, out uint lpflOldProtect);
+        [DllImport("kernel32.dll")]
+        public static extern IntPtr VirtualAllocEx(IntPtr hProcess, IntPtr lpAddress, uint dwSize, uint flAllocationType, uint flProtect);
 
         [DllImport("user32.dll", EntryPoint = "FindWindow", SetLastError = true)]
         // Find window by Caption only. Note you must pass 0 as the first parameter.
@@ -128,7 +130,7 @@ namespace TickTockIAmAClock
         public void MakeWriteable(bool addToBaseAddress, int pOffset, int size)
         {
             uint t = 0;
-            VirtualProtectEx(processHandle, addToBaseAddress ? ImageAddress(pOffset) : pOffset, size, PAGE_READWRITE,
+            VirtualProtectEx(processHandle, addToBaseAddress ? ImageAddress(pOffset) : pOffset, size, PAGE_EXECUTE_READWRITE,
                 out t);
         }
 
