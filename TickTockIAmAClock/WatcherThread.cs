@@ -140,9 +140,9 @@ namespace TickTockIAmAClock
                 var newAddress = FreeMemoryAddress + offset;
                 Program.Memory.WriteMemory(true, newAddress, GetTickRateASM);
                 var newCallOffset = Program.Memory.ImageAddress(newAddress) -
-                                    (Program.Memory.ImageAddress(tickRateCall) + 5);
+                                    (Program.Memory.ImageAddress(tickRateCall) + 5); //Dst - Src + 5 (5 is the size of a call instruction)
                 var newCall = new byte[5];
-                newCall[0] = 0xE8;
+                newCall[0] = 0xE8; //Call
                 var bs = BitConverter.GetBytes(newCallOffset);
                 for (var i = 0; i < bs.Length; i++)
                     newCall[i+1] = bs[i];
