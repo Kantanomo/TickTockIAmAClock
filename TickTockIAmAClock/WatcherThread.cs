@@ -648,6 +648,7 @@ namespace TickTockIAmAClock
                                     (Program.Memory.ImageAddress(getDeltaMultiCall.offset) + 5);
                 byte[] newCall = new byte[5];
                 byte[] bs = BitConverter.GetBytes(newCallOffset);
+
                 newCall[0] = 0xE8;
                 for (int i = 0; i < bs.Length; i++)
                     newCall[i + 1] = bs[i];
@@ -753,7 +754,7 @@ namespace TickTockIAmAClock
             //Change the Particle Systems multiplier to 60
             Program.Memory.WriteFloat(0x39E2F8, 60, true);
             //Program.Memory.WriteByte(NewGetTickRates[51], (byte) Program.TickRate, true);
-            Program.Memory.WriteByte(NewGetTickRates[57], (byte)Program.TickRate, true);
+            //Program.Memory.WriteByte(NewGetTickRates[57], (byte)Program.TickRate, true);
             Program.Memory.WriteFloat(Program.Memory.Pointer(true, 0x4c06e4, 0x14), 1f / Program.DeltaRickRate);
             //var a = (NumericUpDown)Form1.tPanel.Controls["Tick_51"];
             //a.Value = Program.TickRate;
@@ -767,7 +768,7 @@ namespace TickTockIAmAClock
                 if (Process.GetProcessesByName("halo2").Count(x => x.HasExited == false) > 0)
                 {
                     Program.Memory =
-                        new MemoryHandler(Process.GetProcessesByName("halo2").Single(x => x.HasExited == false));
+                        new MemoryHandler(Process.GetProcessesByName("halo2").Last(x => x.HasExited == false));
                     Program.Memory.MakeWriteable(true, 0x39E2F8, 4);
                     Program.Memory.WriteMemory(true, 0x9355c, new byte[]{0x90, 0x90, 0x90, 0x90});
                     if (Program.MinimalMode)

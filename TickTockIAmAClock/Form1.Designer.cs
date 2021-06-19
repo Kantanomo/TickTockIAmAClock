@@ -37,31 +37,31 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.getTickRatePage = new System.Windows.Forms.TabPage();
-            this.adjustTickIntPage = new System.Windows.Forms.TabPage();
-            this.getDeltaPage = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.deltaTick = new System.Windows.Forms.NumericUpDown();
-            this.isInterpolating = new System.Windows.Forms.CheckBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.descriptorLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.getDeltaDeactivate = new System.Windows.Forms.Button();
-            this.getRateReset = new System.Windows.Forms.Button();
-            this.getRateMaster = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.getRateMaster = new System.Windows.Forms.NumericUpDown();
+            this.getRateReset = new System.Windows.Forms.Button();
+            this.adjustTickIntPage = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.adjustIntMaster = new System.Windows.Forms.NumericUpDown();
             this.adjustIntReset = new System.Windows.Forms.Button();
-            this.advancedTip = new System.Windows.Forms.ToolTip(this.components);
+            this.getDeltaPage = new System.Windows.Forms.TabPage();
+            this.getDeltaDeactivate = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.deltaTick = new System.Windows.Forms.NumericUpDown();
             this.getDeltaMultiPage = new System.Windows.Forms.TabPage();
+            this.isInterpolating = new System.Windows.Forms.CheckBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.descriptorLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.advancedTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TickRateNum)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.getTickRatePage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getRateMaster)).BeginInit();
             this.adjustTickIntPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adjustIntMaster)).BeginInit();
             this.getDeltaPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deltaTick)).BeginInit();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getRateMaster)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adjustIntMaster)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -156,6 +156,43 @@
             this.getTickRatePage.Text = "Get_Tick_Rate";
             this.getTickRatePage.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(165, 176);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Change All";
+            // 
+            // getRateMaster
+            // 
+            this.getRateMaster.Location = new System.Drawing.Point(87, 173);
+            this.getRateMaster.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.getRateMaster.Name = "getRateMaster";
+            this.getRateMaster.Size = new System.Drawing.Size(72, 20);
+            this.getRateMaster.TabIndex = 1;
+            this.getRateMaster.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.getRateMaster.ValueChanged += new System.EventHandler(this.getRateMaster_ValueChanged);
+            // 
+            // getRateReset
+            // 
+            this.getRateReset.Location = new System.Drawing.Point(6, 171);
+            this.getRateReset.Name = "getRateReset";
+            this.getRateReset.Size = new System.Drawing.Size(75, 23);
+            this.getRateReset.TabIndex = 0;
+            this.getRateReset.Text = "Reset All (60)";
+            this.getRateReset.UseVisualStyleBackColor = true;
+            this.getRateReset.Click += new System.EventHandler(this.getRateReset_Click);
+            // 
             // adjustTickIntPage
             // 
             this.adjustTickIntPage.Controls.Add(this.label4);
@@ -169,6 +206,48 @@
             this.adjustTickIntPage.Text = "adjust_int";
             this.adjustTickIntPage.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(165, 176);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Change All";
+            // 
+            // adjustIntMaster
+            // 
+            this.adjustIntMaster.Location = new System.Drawing.Point(87, 173);
+            this.adjustIntMaster.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.adjustIntMaster.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.adjustIntMaster.Name = "adjustIntMaster";
+            this.adjustIntMaster.Size = new System.Drawing.Size(72, 20);
+            this.adjustIntMaster.TabIndex = 4;
+            this.adjustIntMaster.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.adjustIntMaster.ValueChanged += new System.EventHandler(this.adjustIntMaster_ValueChanged);
+            // 
+            // adjustIntReset
+            // 
+            this.adjustIntReset.Location = new System.Drawing.Point(6, 171);
+            this.adjustIntReset.Name = "adjustIntReset";
+            this.adjustIntReset.Size = new System.Drawing.Size(75, 23);
+            this.adjustIntReset.TabIndex = 3;
+            this.adjustIntReset.Text = "Reset All (60)";
+            this.adjustIntReset.UseVisualStyleBackColor = true;
+            this.adjustIntReset.Click += new System.EventHandler(this.adjustIntReset_Click);
+            // 
             // getDeltaPage
             // 
             this.getDeltaPage.Controls.Add(this.getDeltaDeactivate);
@@ -181,6 +260,16 @@
             this.getDeltaPage.TabIndex = 2;
             this.getDeltaPage.Text = "Get_Tick_Delta";
             this.getDeltaPage.UseVisualStyleBackColor = true;
+            // 
+            // getDeltaDeactivate
+            // 
+            this.getDeltaDeactivate.Location = new System.Drawing.Point(64, 171);
+            this.getDeltaDeactivate.Name = "getDeltaDeactivate";
+            this.getDeltaDeactivate.Size = new System.Drawing.Size(99, 23);
+            this.getDeltaDeactivate.TabIndex = 10;
+            this.getDeltaDeactivate.Text = "Deactivate All";
+            this.getDeltaDeactivate.UseVisualStyleBackColor = true;
+            this.getDeltaDeactivate.Click += new System.EventHandler(this.getDeltaDeactivate_Click);
             // 
             // label2
             // 
@@ -200,7 +289,7 @@
             0,
             0});
             this.deltaTick.Minimum = new decimal(new int[] {
-            30,
+            1,
             0,
             0,
             0});
@@ -213,6 +302,16 @@
             0,
             0});
             this.deltaTick.ValueChanged += new System.EventHandler(this.deltaTick_ValueChanged);
+            // 
+            // getDeltaMultiPage
+            // 
+            this.getDeltaMultiPage.Location = new System.Drawing.Point(4, 22);
+            this.getDeltaMultiPage.Name = "getDeltaMultiPage";
+            this.getDeltaMultiPage.Padding = new System.Windows.Forms.Padding(3);
+            this.getDeltaMultiPage.Size = new System.Drawing.Size(400, 200);
+            this.getDeltaMultiPage.TabIndex = 3;
+            this.getDeltaMultiPage.Text = "Get_Delta_Multi";
+            this.getDeltaMultiPage.UseVisualStyleBackColor = true;
             // 
             // isInterpolating
             // 
@@ -242,100 +341,6 @@
             this.descriptorLabel.Name = "descriptorLabel";
             this.descriptorLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // getDeltaDeactivate
-            // 
-            this.getDeltaDeactivate.Location = new System.Drawing.Point(64, 171);
-            this.getDeltaDeactivate.Name = "getDeltaDeactivate";
-            this.getDeltaDeactivate.Size = new System.Drawing.Size(99, 23);
-            this.getDeltaDeactivate.TabIndex = 10;
-            this.getDeltaDeactivate.Text = "Deactivate All";
-            this.getDeltaDeactivate.UseVisualStyleBackColor = true;
-            this.getDeltaDeactivate.Click += new System.EventHandler(this.getDeltaDeactivate_Click);
-            // 
-            // getRateReset
-            // 
-            this.getRateReset.Location = new System.Drawing.Point(6, 171);
-            this.getRateReset.Name = "getRateReset";
-            this.getRateReset.Size = new System.Drawing.Size(75, 23);
-            this.getRateReset.TabIndex = 0;
-            this.getRateReset.Text = "Reset All (60)";
-            this.getRateReset.UseVisualStyleBackColor = true;
-            this.getRateReset.Click += new System.EventHandler(this.getRateReset_Click);
-            // 
-            // getRateMaster
-            // 
-            this.getRateMaster.Location = new System.Drawing.Point(87, 173);
-            this.getRateMaster.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.getRateMaster.Minimum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.getRateMaster.Name = "getRateMaster";
-            this.getRateMaster.Size = new System.Drawing.Size(72, 20);
-            this.getRateMaster.TabIndex = 1;
-            this.getRateMaster.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.getRateMaster.ValueChanged += new System.EventHandler(this.getRateMaster_ValueChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 176);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Change All";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(165, 176);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Change All";
-            // 
-            // adjustIntMaster
-            // 
-            this.adjustIntMaster.Location = new System.Drawing.Point(87, 173);
-            this.adjustIntMaster.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.adjustIntMaster.Minimum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.adjustIntMaster.Name = "adjustIntMaster";
-            this.adjustIntMaster.Size = new System.Drawing.Size(72, 20);
-            this.adjustIntMaster.TabIndex = 4;
-            this.adjustIntMaster.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.adjustIntMaster.ValueChanged += new System.EventHandler(this.adjustIntMaster_ValueChanged);
-            // 
-            // adjustIntReset
-            // 
-            this.adjustIntReset.Location = new System.Drawing.Point(6, 171);
-            this.adjustIntReset.Name = "adjustIntReset";
-            this.adjustIntReset.Size = new System.Drawing.Size(75, 23);
-            this.adjustIntReset.TabIndex = 3;
-            this.adjustIntReset.Text = "Reset All (60)";
-            this.adjustIntReset.UseVisualStyleBackColor = true;
-            this.adjustIntReset.Click += new System.EventHandler(this.adjustIntReset_Click);
-            // 
             // advancedTip
             // 
             this.advancedTip.AutomaticDelay = 100;
@@ -345,16 +350,6 @@
             this.advancedTip.ReshowDelay = 20;
             this.advancedTip.UseAnimation = false;
             this.advancedTip.UseFading = false;
-            // 
-            // getDeltaMultiPage
-            // 
-            this.getDeltaMultiPage.Location = new System.Drawing.Point(4, 22);
-            this.getDeltaMultiPage.Name = "getDeltaMultiPage";
-            this.getDeltaMultiPage.Padding = new System.Windows.Forms.Padding(3);
-            this.getDeltaMultiPage.Size = new System.Drawing.Size(400, 200);
-            this.getDeltaMultiPage.TabIndex = 3;
-            this.getDeltaMultiPage.Text = "Get_Delta_Multi";
-            this.getDeltaMultiPage.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -376,15 +371,15 @@
             this.tabControl1.ResumeLayout(false);
             this.getTickRatePage.ResumeLayout(false);
             this.getTickRatePage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.getRateMaster)).EndInit();
             this.adjustTickIntPage.ResumeLayout(false);
             this.adjustTickIntPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.adjustIntMaster)).EndInit();
             this.getDeltaPage.ResumeLayout(false);
             this.getDeltaPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deltaTick)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.getRateMaster)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.adjustIntMaster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
